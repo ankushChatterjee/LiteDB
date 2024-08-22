@@ -61,8 +61,9 @@ namespace LiteDB.Engine
                 items.OrderBy(x => x.Key, _collation) : items.OrderByDescending(x => x.Key, _collation);
 
             var offset = 0;
+            var check = 0;
 
-            foreach(var item in query)
+            foreach (var item in query)
             {
                 buffer.WriteIndexKey(item.Key, offset);
 
